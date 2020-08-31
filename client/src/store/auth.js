@@ -19,9 +19,19 @@ export const login = (username, password) => {
       },
       body: JSON.stringify({ username, password })
     });
+    res.data = await res.json();
     if (res.ok) {
-      const data = await res.json();
-      dispatch(setUser(data));
+      dispatch(setUser(res.data.user));
     }
+    return res;
+  };
+};
+
+export default function authReducer(state={}, action) {
+  switch (action.type) {
+    case SET_USER:
+      return action.user;
+    default:
+      return state;
   }
 }
