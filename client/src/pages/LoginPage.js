@@ -17,6 +17,11 @@ function LoginPage() {
     dispatch(login(username, password));
   }
 
+  const handleDemoUser = e => {
+    // e.preventDefault();
+    dispatch(login('Demo-lition', 'password'));
+  }
+
   const isFormValid = () => {
     return username && password;
   }
@@ -48,6 +53,7 @@ function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit" disabled={!isFormValid()}>Log In</button>
+            <button id='demoUser' type="submit" onClick={handleDemoUser}>Log In As Demo User</button>
           </form>
           <div className="orContainer">
             <div className="orMargin" />
