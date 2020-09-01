@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   width: 350px;
-  height: 470px;
+  height: 530px;
   justify-content: center;
   flex-direction: column;
   background-color: white;
@@ -24,16 +24,16 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 40%;
+  height: 45%;
   justify-content: flex-end;
-  margin-top: 5%;
+  margin-top: 10%;
 
 }
 
-input {
+.signupPage input {
   margin: 4px;
   width: 75%;
-  height: 20%;
+  height: 30%;
   border: 0.5px solid lightgrey;
   align-self: center;
   border-radius: 2px;
@@ -41,11 +41,11 @@ input {
   background-color: #FAFAFA;
 }
 
-button {
-  margin: 8px;
+.signupPage button {
+  margin-top: 5%;
   font-size: 14px;
   width: 75%;
-  height: 20%;
+  height: 35%;
   border: none;
   border-radius: 4px;
   background-color: #0095f6;
@@ -63,7 +63,7 @@ button {
   display: grid;
   grid-template-columns: 5fr 1fr 5fr;
   color: grey;
-  margin-bottom: 0;
+  margin-bottom: 5%;
   margin-top: 2%;
 }
 

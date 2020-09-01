@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login } from '../store/auth';
 import './SignupPage.css';
 import logo from '../images/petgram-logo.png';
+import { Link } from 'react-router-dom';
 
 function SignupPage() {
   const [email, setEmail] = useState('');
@@ -63,7 +64,7 @@ function SignupPage() {
             <div className="orMargin" />
           </div>
           <div className="signup-link">
-            Already have an account? <a href="/login">Log In</a>
+            Already have an account? <Link to="/login">Log In</Link>
           </div>
         </div>
         <div />

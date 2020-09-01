@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../store/auth';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import './LoginPage.css';
 import logo from '../images/petgram-logo.png';
 import dogAndCat from "../images/dog-and-cat.png";
@@ -61,7 +61,7 @@ function LoginPage() {
             <div className="orMargin" />
           </div>
           <div className="signup-link">
-            Don't have an account? <a href="/signup">Sign up</a>
+            Don't have an account? <Link to="/signup">Sign up</Link>
           </div>
         </div>
         <div />

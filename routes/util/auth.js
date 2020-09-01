@@ -30,8 +30,13 @@ function generateToken(user) {
 function restoreUser(req, _res, next) {
   const { token } = req.cookies;
   if (!token) {
-    const err = new AuthenticationError();
-    return next(err);
+    // const err = new AuthenticationError();
+    // return next(err);
+    try {
+      const err = new AuthenticationError();
+    } catch (err) {
+      res.send(JSON.stringify('Unsuccessful'));
+    }
   }
 
   return jwt.verify(token, secret, null, async (err, payload) => {
