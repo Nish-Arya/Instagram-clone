@@ -2,7 +2,7 @@
   display: grid;
   width: 100vw;
   height: 91vh;
-  grid-template-columns: 0.8fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1.2fr;
   background-color: #FAFAFA;
 }
 
@@ -19,15 +19,17 @@
   height: 470px;
   justify-content: center;
   flex-direction: column;
-  margin-top: 30%;
   background-color: white;
   border: 1px solid lightgrey;
   border-radius: 1px;
+  align-self: center;
+
 }
 
 .dog-and-cat {
   height: 450px;
-  margin-bottom: 10%;
+  align-self: center;
+  padding-right: 20px;
 }
 
 .login-form {
