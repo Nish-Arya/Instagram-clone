@@ -22,7 +22,7 @@ function SignupPage() {
 
   return (
     <>
-      <div className="loginPage">
+      <div className="signupPage">
         <div />
         <div className="loginFormContainer">
           <img id="logo" src={logo} alt="Petgram logo" />
@@ -63,7 +63,7 @@ function SignupPage() {
             <div className="orMargin" />
           </div>
           <div className="signup-link">
-            Don't have an account? <a href="/login">Sign up</a>
+            Already have an account? <a href="/login">Log In</a>
           </div>
         </div>
         <div />
