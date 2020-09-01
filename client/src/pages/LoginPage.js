@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../store/auth';
 import { Redirect } from 'react-router-dom';
+import './LoginPage.css';
+import logo from '../images/petgram-logo.png';
+import dogAndCat from "../images/dog-and-cat.png";
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -14,30 +17,56 @@ function LoginPage() {
     dispatch(login(username, password));
   }
 
+  const isFormValid = () => {
+    return username && password;
+  }
+
   if (isLoggedIn) return <Redirect to='/' />;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username or email
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <>
+      <div className="loginPage">
+        <div />
+        <div className="dog-and-cat__holder">
+          <img className="dog-and-cat" src={dogAndCat} alt="Dog and cat" />
+        </div>
+        <div className="loginFormContainer">
+          <img id="logo" src={logo} alt="Petgram logo" />
+          <form className="login-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username or email"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit" disabled={!isFormValid()}>Log In</button>
+          </form>
+          <div className="orContainer">
+            <div className="orMargin" />
+            <h3 id='or'>OR</h3>
+            <div className="orMargin" />
+          </div>
+          <div className="signup-link">
+            Don't have an account? <a href="/login">Sign up</a>
+          </div>
+        </div>
+        <div />
+      </div>
+      <footer>
+        <a href="https://github.com/Nish-Arya/Instagram-clone/wiki">ABOUT</a>
+        <a href="https://github.com/Nish-Arya">GITHUB</a>
+        <a href="https://www.linkedin.com/in/nish-arya-53727a16a/">LINKEDIN</a>
+        <h5>© 2020 PETGRAM BY NISH</h5>
+      </footer>
+    </>
   );
 }
 
