@@ -1,47 +1,50 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../store/auth';
-import { Redirect } from 'react-router-dom';
-import './LoginPage.css';
+import './SignupPage.css';
 import logo from '../images/petgram-logo.png';
-import dogAndCat from "../images/dog-and-cat.png";
 
-function LoginPage() {
+function SignupPage() {
+  const [email, setEmail] = useState('');
+  const [fullName, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const isLoggedIn = useSelector(state => !!state.auth.id);
   const dispatch = useDispatch();
-  
+
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(login(username, password));
-  }
-
-  const handleDemoUser = e => {
-    // e.preventDefault();
-    dispatch(login('Demo-lition', 'password'));
   }
 
   const isFormValid = () => {
     return username && password;
   }
 
-  if (isLoggedIn) return <Redirect to='/' />;
-
   return (
     <>
       <div className="loginPage">
         <div />
-        <div className="dog-and-cat__holder">
-          <img className="dog-and-cat" src={dogAndCat} alt="Dog and cat" />
-        </div>
         <div className="loginFormContainer">
           <img id="logo" src={logo} alt="Petgram logo" />
           <form className="login-form" onSubmit={handleSubmit}>
             <input
               type="text"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+            />
+            <input
+              type="text"
               name="username"
-              placeholder="Username or email"
+              placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -52,8 +55,7 @@ function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" disabled={!isFormValid()}>Log In</button>
-            <button id='demoUser' type="submit" onClick={handleDemoUser}>Log In As Demo User</button>
+            <button type="submit" disabled={!isFormValid()}>Sign Up</button>
           </form>
           <div className="orContainer">
             <div className="orMargin" />
@@ -61,7 +63,7 @@ function LoginPage() {
             <div className="orMargin" />
           </div>
           <div className="signup-link">
-            Don't have an account? <a href="/signup">Sign up</a>
+            Don't have an account? <a href="/login">Sign up</a>
           </div>
         </div>
         <div />
@@ -76,4 +78,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage
+export default SignupPage;
