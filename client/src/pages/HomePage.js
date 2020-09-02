@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import logo from '../images/petgram-logo.png';
 import './HomePage.css';
 import Post from '../components/Post';
+import HomeIcon from '@material-ui/icons/Home';
 
 function HomePage() {
 
@@ -22,7 +23,7 @@ function HomePage() {
       <div className="home__header">
         <div className="home__navbar">
           <img className="navbar__logo" src={logo} alt="logo" />
-          <button className='navbar__button' type='submit'>Profile</button>
+          <HomeIcon style={{ fontSize: 30 }} className='navbar__button' type='submit' />
           <button className='navbar__button' onClick={handleClick} type='submit'>Log Out</button>
         </div>
       </div>
