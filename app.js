@@ -69,18 +69,18 @@ app.use(function(err, _req, res, _next) {
   if (err instanceof AuthenticationError) {
     res.clearCookie('token');
   }
-  // if (process.env.NODE_ENV === 'production') {
-  //   res.json({
-  //     message: err.message,
-  //     error: { errors: err.errors },
-  //   });
-  // } else {
-  //   res.json({
-  //     message: err.message,
-  //     stack: err.stack,
-  //     error: JSON.parse(JSON.stringify(err)),
-  //   });
-  // }
+  if (process.env.NODE_ENV === 'production') {
+    res.json({
+      message: err.message,
+      error: { errors: err.errors },
+    });
+  } else {
+    res.json({
+      message: err.message,
+      stack: err.stack,
+      error: JSON.parse(JSON.stringify(err)),
+    });
+  }
 });
 
 module.exports = app;
