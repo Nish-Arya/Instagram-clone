@@ -77,7 +77,7 @@ function SignupPage() {
         <a href="https://github.com/Nish-Arya/Instagram-clone/wiki">ABOUT</a>
         <a href="https://github.com/Nish-Arya">GITHUB</a>
         <a href="https://www.linkedin.com/in/nish-arya-53727a16a/">LINKEDIN</a>
-        <h5>© 2020 PETGRAM BY NISH</h5>
+        <h5>© 2020 PETGRAM BY NISH ARYA</h5>
       </footer>
     </>
   );
