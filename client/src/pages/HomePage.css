@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+}
+
+.home {
+  background-color: #FAFAFA;
+  height: 100vh;
+}
+
+.home__header {
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  width: 100vw;
+}
+
+.home__navbar {
+  display: flex;
+  object-fit: contain;
+  padding: 8px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.navbar__logo {
+  height: 30px;
+  width: 150px;
+  margin-top: 2px;
+  margin-right: 60%;
+}
+
+.navbar__button {
+  width: 70px;
+  margin: 4px;
+}
