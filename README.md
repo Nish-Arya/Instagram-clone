@@ -1,38 +1,131 @@
-# Solo React Project
+> # **Petgram (Instagram-clone)**
+---
 
-This is the backend for the Solo React project.
 
-## Getting started
+> ## **About**
+---
 
-1. Clone this repository
-2. Install dependencies (`npm install`)
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file with CREATEDB privileges
+>> ***Petgram is a clone of the popular social media application 'Instagram'. Instagram is a secure platform where users can sign-up, upload pictures, and view what other people have uploaded. Users can then like and comment on the posts they like. Petgram will try to emulate as much functionality as Instagram as possible, with the only difference being Petgram is for Pets!***
 
-5. Run
-   * `npm run db:create`
-   * `npm run db:migrate`
-   * `npm run db:seed:all`
-   * `npm start`
+---
 
-## Deploy to Heroku
+> ## **Schema** 
+---
 
-1. Create a new project
-2. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-3. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-4. Run `$ heroku login`
-5. Add heroku as a remote to this git repo `$ heroku git:remote -a <project_name>`
-6. Push the project to heroku `$ git push heroku master`
-7. Connect to the heroku shell and prepare your database
+![Schema Diagram](./images/schema.png)
 
-```bash
-    $ heroku run bash
-    $ sequelize-cli db:migrate
-    $ sequelize-cli db:seed:all
+---
+
+> ## **Sample Front End State**
+---
+
 ```
-(You can interact with your database this way as youd like, but beware that `db:drop` should not be run in the heroku environment)
+ {
+  authentication: {
+    1: {
+    createdAt: "2020-08-27T23:10:24.991Z",
+    email: "demo@example.com",
+    id: 1,
+    name: "Demo-lition",
+    updatedAt: "2020-08-29T16:21:07.669Z",
+    },
+  }
+  users: {
+   1: {
+    id: 1,
+    username: "Demo-lition"
+   }
+  }
+  posts: {
+    1: {
+      id: 1,
+      userId: 1,
+      imageUrl: "images/demo.png",
+      caption: "This is demo post!",
+    }
+  }
+  comments: {
+   1: {
+    id: 1,
+    userId: 6,
+    postId: 3,
+    body: "That is a great demo post!"
+   }
+  }
+}
+```
 
-8. Add environment variables on the heroku environment using the Heroku dashboard. (Setting Heroku Config Vars)[https://devcenter.heroku.com/articles/config-vars]
+---
 
-9. profit
+> ## **Back end routes**
+---
+
+>> - Get User: GET */api/session*
+>>
+>> - Login: PUT */api/session*
+>>
+>> - Sign-up: POST */api/users*
+>>
+>> - Logout: DELETE */api/session*
+>>
+>> - List Posts: GET */api/posts*
+>>
+>> - Add Post: POST */api/posts*
+>>
+>> - Delete Post: DELETE */api/posts/id*
+>>
+>> - Get user: GET */api/users/:id*
+
+---
+
+> ## **Front end routes**
+---
+
+>> - Login:  */login*
+>>
+>> - Sign-up:  */signup*
+>>
+>> - Home Page:  */*
+>>
+>> - User profile:  */:username*
+
+---
+
+> ## **MVP List with deadlines**
+---
+
+>> ### ***Sign-up***
+>> - As a user, I want to sign-up for access to Petgram, so that I can interact with other users by posting pet pictures with a caption.
+>> - *Expected completion day - Monday*
+>>
+>> ### ***Login***
+>> - As a user, I want to login to Petgram, so that I can start viewing what other users are posting and be able to post myself.
+>> - *Expected completion day - Monday/Tuesday*
+>>
+>> ### ***Demo User***
+>> - As a user, I want to able to quickly demo the app via accessing it with the demo user login option.
+>> - *Expected completion day - Tuesday/Wednesday*
+>>
+>> ### ***Home Page***
+>> - As a user, I want to see what other users are posting on the home page.
+>> - *Expected completion day - Thursday/Friday*
+>>
+>> ### ***Comments***
+>> - As a user, I want to able to comment on a post by another user.
+>> - *Expected completion day - Friday/Weekend*
+
+---
+
+> ## **Stretch Goals**
+---
+
+>> ### ***User Profile***
+>> - As a user, I want to able to view all my old posts on my profile page.
+>>
+>> ### ***Likes***
+>> - As a user, I want to able to like a post by another user.
+>>
+>> ### ***AWS S3***
+>> - As a user, I want to upload a picture from my device.
+
+---

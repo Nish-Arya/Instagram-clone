@@ -1,22 +1,16 @@
-.loginPage {
+.signupPage {
   display: grid;
   width: 100vw;
   height: 91vh;
-  grid-template-columns: 1fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1fr 0.60fr 1fr;
   background-color: #FAFAFA;
-}
-
-.dog-and-cat__holder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .loginFormContainer {
   display: flex;
   align-items: center;
   width: 350px;
-  height: 470px;
+  height: 530px;
   justify-content: center;
   flex-direction: column;
   background-color: white;
@@ -26,24 +20,20 @@
 
 }
 
-.dog-and-cat {
-  height: 450px;
-  align-self: center;
-  padding-right: 20px;
-}
-
-.login-form {
+.signup-form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 30%;
+  height: 45%;
+  justify-content: flex-end;
   margin-top: 10%;
+
 }
 
-input {
-  margin: 6px;
+.signupPage input {
+  margin: 4px;
   width: 75%;
-  height: 20%;
+  height: 30%;
   border: 0.5px solid lightgrey;
   align-self: center;
   border-radius: 2px;
@@ -51,25 +41,11 @@ input {
   background-color: #FAFAFA;
 }
 
-button {
-  margin: 2px;
+.signupPage button {
+  margin-top: 5%;
   font-size: 14px;
   width: 75%;
-  height: 6%;
-  border: none;
-  border-radius: 4px;
-  background-color: #0095f6;
-  color: white;
-  font-weight: 700;
-  align-self: center;
-  margin-top: 0;
-}
-
-.login-form button {
-  margin: 8px;
-  font-size: 14px;
-  width: 75%;
-  height: 20%;
+  height: 30%;
   border: none;
   border-radius: 4px;
   background-color: #0095f6;
@@ -78,9 +54,8 @@ button {
   align-self: center;
 }
 
-#logo {
+#logo2 {
   height: 12%;
-  margin-top: 0;
 }
 
 .orContainer {
@@ -88,7 +63,7 @@ button {
   display: grid;
   grid-template-columns: 5fr 1fr 5fr;
   color: grey;
-  margin-bottom: 4%;
+  margin-bottom: 5%;
   margin-top: 2%;
 }
 
@@ -99,7 +74,7 @@ button {
 }
 
 .signup-link {
-  margin-bottom: 46%;
+  margin-bottom: 0;
 }
 
 a {
@@ -128,7 +103,7 @@ input:focus {
 footer {
   display: flex;
   justify-content: space-around;
-  padding-left: 30%;
+  padding-left: 25%;
   padding-right: 20%;
   height: 9vh;
 }

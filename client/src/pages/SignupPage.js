@@ -1,46 +1,55 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../store/auth';
-import { Redirect, Link } from 'react-router-dom';
-import './LoginPage.css';
+import { signup, login } from '../store/auth';
+import './SignupPage.css';
 import logo from '../images/petgram-logo.png';
-import dogAndCat from "../images/dog-and-cat.png";
+import { Redirect, Link } from 'react-router-dom';
 
-function LoginPage() {
+function SignupPage() {
+  const [email, setEmail] = useState('');
+  const [fullName, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const isLoggedIn = useSelector(state => !!state.auth.id);
   const dispatch = useDispatch();
-  
-  const handleSubmit = e => {
+
+  const handleSubmit = async e => {
     e.preventDefault();
+    await dispatch(signup(username, email, password));
     dispatch(login(username, password));
   }
 
-  const handleDemoUser = e => {
-    dispatch(login('Demo-lition', 'password'));
-  }
-
   const isFormValid = () => {
-    return username && password;
+    return email && fullName && username && password;
   }
 
   if (isLoggedIn) return <Redirect to='/' />;
 
   return (
     <>
-      <div className="loginPage">
+      <div className="signupPage">
         <div />
-        <div className="dog-and-cat__holder">
-          <img className="dog-and-cat" src={dogAndCat} alt="Dog and cat" />
-        </div>
         <div className="loginFormContainer">
-          <img id="logo" src={logo} alt="Petgram logo" />
-          <form className="login-form" onSubmit={handleSubmit}>
+          <img id="logo2" src={logo} alt="Petgram logo" />
+          <form className="signup-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+            />
             <input
               type="text"
               name="username"
-              placeholder="Username or email"
+              placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -51,16 +60,15 @@ function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" disabled={!isFormValid()}>Log In</button>
+            <button type="submit" disabled={!isFormValid()}>Sign Up</button>
           </form>
-          <button id='demoUser' onClick={handleDemoUser}>Log In As Demo User</button>
           <div className="orContainer">
             <div className="orMargin" />
             <h3 id='or'>OR</h3>
             <div className="orMargin" />
           </div>
           <div className="signup-link">
-            Don't have an account? <Link to="/signup">Sign up</Link>
+            Already have an account? <Link to="/login">Log In</Link>
           </div>
         </div>
         <div />
@@ -75,4 +83,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default SignupPage;
