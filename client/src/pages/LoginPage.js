@@ -18,7 +18,6 @@ function LoginPage() {
   }
 
   const handleDemoUser = e => {
-    // e.preventDefault();
     dispatch(login('Demo-lition', 'password'));
   }
 
@@ -53,8 +52,8 @@ function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit" disabled={!isFormValid()}>Log In</button>
-            <button id='demoUser' type="submit" onClick={handleDemoUser}>Log In As Demo User</button>
           </form>
+          <button id='demoUser' onClick={handleDemoUser}>Log In As Demo User</button>
           <div className="orContainer">
             <div className="orMargin" />
             <h3 id='or'>OR</h3>
@@ -76,4 +75,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage
+export default LoginPage;
