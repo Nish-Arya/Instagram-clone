@@ -18,7 +18,7 @@ function LoginPage() {
   }
 
   const handleDemoUser = e => {
-    dispatch(login('Demo-lition', 'password'));
+    dispatch(login('Demo-User', 'password'));
   }
 
   const isFormValid = () => {

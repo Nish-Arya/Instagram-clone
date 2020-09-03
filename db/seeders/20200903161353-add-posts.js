@@ -17,7 +17,7 @@ module.exports = {
       r({ imageUrl: '/images/tree-cat.png', caption: 'Meow!' }),
       r({ imageUrl: '/images/nap-dog.png', caption: 'Quarantine got me napping like...' }),
       r({ imageUrl: '/images/tucker-2.png', caption: 'This is my passport shot.' }),
-      r({ imageUrl: '/images/tucker/1.png', caption: 'Good morning hoomans!' }),
+      r({ imageUrl: '/images/good-morning.png', caption: 'Good morning hoomans!' }),
       r({ imageUrl: '/images/hello-shiba.png', caption: 'I woke up like this!!!' }),
       r({ imageUrl: '/images/bengal-simba.png', caption: 'You heard me...' }),
       r({ imageUrl: '/images/jake-1.png', caption: 'Jakeyyy' }),
