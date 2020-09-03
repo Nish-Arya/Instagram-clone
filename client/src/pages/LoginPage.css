@@ -51,7 +51,7 @@ input {
   background-color: #FAFAFA;
 }
 
-button {
+.loginFormContainer>button {
   margin: 2px;
   font-size: 14px;
   width: 75%;
