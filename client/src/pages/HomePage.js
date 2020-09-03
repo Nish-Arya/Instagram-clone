@@ -32,20 +32,22 @@ function HomePage() {
   if (loading) return null;
 
   return (
-    <div className="home">
-      <div className="home__header">
-        <div className="home__navbar">
-          <img className="navbar__logo" src={logo} alt="logo" />
-          <HomeIcon style={{ fontSize: 30 }} className='navbar__button__home' type='submit' />
-          <button className='navbar__button__logout' onClick={handleClick} type='submit'>Log Out</button>
-        </div>
+    <>
+    <div className="home__header">
+      <div className="home__navbar">
+        <img className="navbar__logo" src={logo} alt="logo" />
+        <HomeIcon style={{ fontSize: 30 }} className='navbar__button__home' type='submit' />
+        <button className='navbar__button__logout' onClick={handleClick} type='submit'>Log Out</button>
       </div>
+    </div>
+    <div className="home">
       <div className="home__postContainer">
-        {posts.map(post => {
+        {posts.slice(0).reverse().map(post => {
           return <Post key={post.id} {...post} />
         })}
       </div>
     </div>
+    </>
   )
 }
 
