@@ -36,6 +36,7 @@ function HomePage() {
     <div className="home__header">
       <div className="home__navbar">
         <img className="navbar__logo" src={logo} alt="logo" />
+        <div />
         <HomeIcon style={{ fontSize: 30 }} className='navbar__button__home' type='submit' />
         <button className='navbar__button__logout' onClick={handleClick} type='submit'>Log Out</button>
       </div>

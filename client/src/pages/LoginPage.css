@@ -40,10 +40,10 @@
   margin-top: 10%;
 }
 
-input {
+.loginFormContainer input {
   margin: 6px;
   width: 75%;
-  height: 20%;
+  height: 24%;
   border: 0.5px solid lightgrey;
   align-self: center;
   border-radius: 2px;
@@ -66,10 +66,10 @@ input {
 }
 
 .login-form button {
-  margin: 8px;
+  margin: 2%;
   font-size: 14px;
   width: 75%;
-  height: 20%;
+  height: 22%;
   border: none;
   border-radius: 4px;
   background-color: #0095f6;
@@ -99,7 +99,7 @@ input {
 }
 
 .signup-link {
-  margin-bottom: 46%;
+  margin-bottom: 2%;
 }
 
 a {
@@ -144,6 +144,11 @@ h5 {
   margin-top: 0;
   font-weight: 700;
   font-size: 12px;
+}
+
+#demoUser {
+  height: 6.6%;
+  margin-top: 3%;
 }
 
 #demoUser:hover {

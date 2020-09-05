@@ -67,7 +67,7 @@ function SignupPage() {
             <h3 id='or'>OR</h3>
             <div className="orMargin" />
           </div>
-          <div className="signup-link">
+          <div className="login-link">
             Already have an account? <Link to="/login">Log In</Link>
           </div>
         </div>

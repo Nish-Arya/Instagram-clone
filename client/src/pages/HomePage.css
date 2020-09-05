@@ -19,7 +19,8 @@
 }
 
 .home__navbar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 8fr 1fr 1fr;
   object-fit: contain;
   padding: 8px;
   max-width: 850px;
@@ -51,7 +52,7 @@
   color: white;
   border-radius: 4px;
   font-weight: 700;
-  font-size: 80%;
+  font-size: 90%;
 }
 
 .navbar__button__logout:hover {
