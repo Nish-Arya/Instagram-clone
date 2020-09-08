@@ -35,7 +35,7 @@ function Post({ id, imageUrl, caption, User, Comments}) {
       <div className="post__footer">
         <div className="footer__caption"><b>{User.username} </b>{caption}</div>
         <ul className="footer__caption">
-          {Comments.map(comment => {
+          {Comments.slice(0).reverse().map(comment => {
             return <div key={comment.id}>
               <b>{comment.body} </b>{comment.username}
             </div>
