@@ -19,6 +19,7 @@ function Post({ id, imageUrl, caption, User, Comments}) {
     e.preventDefault();
     dispatch(sendComment(id, userId, comment, username));
     setComment('');
+    window.location.reload();
   }
 
   const isEmpty = () => {
