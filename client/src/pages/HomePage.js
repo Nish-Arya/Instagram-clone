@@ -6,6 +6,7 @@ import logo from '../images/petgram-logo.png';
 import './HomePage.css';
 import Post from '../components/Post';
 import HomeIcon from '@material-ui/icons/Home';
+import PersonIcon from '@material-ui/icons/Person';
 import { getPosts } from '../store/posts';
 
 function HomePage() {
@@ -38,6 +39,7 @@ function HomePage() {
         <img className="navbar__logo" src={logo} alt="logo" />
         <div />
         <HomeIcon style={{ fontSize: 30 }} className='navbar__button__home' type='submit' />
+        <PersonIcon style={{ fontSize: 30 }} className='navbar__button__home' type='submit' />
         <button className='navbar__button__logout' onClick={handleClick} type='submit'>Log Out</button>
       </div>
     </div>
