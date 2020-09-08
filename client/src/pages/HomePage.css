@@ -20,7 +20,7 @@
 
 .home__navbar {
   display: grid;
-  grid-template-columns: 2fr 8fr 0.5fr 1.3fr;
+  grid-template-columns: 2fr 7fr 0.5fr 0.8fr 1.3fr;
   object-fit: contain;
   padding: 8px;
   max-width: 850px;
