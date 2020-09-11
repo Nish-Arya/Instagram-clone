@@ -5,7 +5,7 @@
 .home {
   background-color: #FAFAFA;
   height: 100vh;
-  margin-top: 6%;
+  margin-top: 80px;
 }
 
 .home__header {
@@ -15,7 +15,6 @@
   border-bottom: 1px solid lightgrey;
   width: 100vw;
   z-index: 2;
-  height: 7.2%;
 }
 
 .home__navbar {
