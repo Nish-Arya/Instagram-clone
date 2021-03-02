@@ -15,11 +15,10 @@ function Post({ id, imageUrl, caption, User, Comments}) {
     
   }, [dispatch]);
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    dispatch(sendComment(id, userId, comment, username));
+    await dispatch(sendComment(id, userId, comment, username));
     setComment('');
-    window.location.reload();
   }
 
   const isEmpty = () => {

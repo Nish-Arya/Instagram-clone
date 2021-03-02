@@ -35,11 +35,12 @@ export const sendComment = (postId, userId, username, body) => {
         "Content-Type": "application/json",
         'XSRF-TOKEN': Cookies.get('XSRF-TOKEN')
       },
-      body: JSON.stringify({ postId, userId, username, body })
+      body: JSON.stringify({ postId, userId, body, username })
     });
     res.data = await res.json();
     if (res.ok) {
-      dispatch(postComment());
+      console.log(res.data.comment);
+      dispatch(postComment(res.data.comment));
     }
     return res;
   }

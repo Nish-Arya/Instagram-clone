@@ -11,8 +11,8 @@ router.get('/', asyncHandler(async function (_req, res, _next) {
 }));
 
 router.post('/:id/comments', asyncHandler(async function (req, res, _next) {
-  await Comment.create(req.body)
-  res.json({ message: 'Successful' });
+  const comment = await Comment.create(req.body)
+  res.json({comment});
 }));
 
 module.exports = router;
