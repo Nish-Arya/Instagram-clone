@@ -17,7 +17,7 @@ function Post({ id, imageUrl, caption, User, Comments}) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    await dispatch(sendComment(id, userId, comment, username));
+    await dispatch(sendComment(id, userId, username, comment));
     setComment('');
   }
 
