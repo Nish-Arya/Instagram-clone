@@ -51,7 +51,7 @@ export default function postsReducer(state={}, action) {
     case SET_POSTS:
       return action.posts;
     case POST_COMMENT:
-      return state;
+      return [...state, action.payload.postId];
     default:
       return state;
   }
