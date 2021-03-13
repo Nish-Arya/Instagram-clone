@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Post.css';
 import Avatar from '@material-ui/core/Avatar';
-import { sendComment } from '../store/posts';
+import { sendComment } from '../store/comments';
 
 function Post({ id, imageUrl, caption, User, Comments}) {
 
