@@ -31,7 +31,7 @@ export const sendComment = (postId, userId, username, body) => {
 export default function commentsReducer(state = {}, action) {
   switch (action.type) {
     case POST_COMMENT:
-      
+      return { ...state, [action.comment.id]: action.comment };
     default:
       return state;
   }
