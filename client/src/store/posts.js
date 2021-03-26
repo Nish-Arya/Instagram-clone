@@ -1,4 +1,4 @@
-// import Cookies from 'js-cookie';
+import Cookies from 'js-cookie';
 
 const SET_POSTS = 'posts/SET_POSTS';
 const POST_COMMENT = "posts/POST_COMMENT";
