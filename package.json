@@ -2,6 +2,9 @@
   "name": "starter",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "12.20.2"
+  },
   "scripts": {
     "start": "per-env",
     "start:development": "nodemon --ignore client/ -r dotenv/config ./bin/www",
